@@ -50,14 +50,14 @@ while play_again.lower()=='yes':
         low=0
         high=101
         feedback=''
-        while feedback != 'C':
+        while feedback != 'c':
             number=random.choice(range(low,high))
-            feedback=input(f"the number u think about is {number}??[type (C) if it's correct , (H) if it's high , (L) if it's low]")
-            if feedback=='C':
+            feedback=input(f"the number u think about is {number}??[type (C) if it's correct , (H) if it's high , (L) if it's low]").lower()
+            if feedback=='c':
                 print(f'yeeess I guess it , i did it in {attempts} attempts')
-            elif feedback=='H':
+            elif feedback=='h':
                 high=number
-            elif feedback=='L':
+            elif feedback=='l':
                 low=number+1
             attempts+=1
 
