@@ -40,7 +40,7 @@ while play_again.lower()=='yes':
                 break
         if user_input==number:
             if attempts==1:
-                print(f"Congrats!! your guess is correct , you did it in {attempts} attempt")
+                print("Congrats!! your guess is correct , you guess it from the first time!! ")
             else: 
                print(f"Congrats!! your guess is correct , you did it in {attempts} attempts")
 
@@ -60,6 +60,5 @@ while play_again.lower()=='yes':
             elif feedback=='L':
                 low=number+1
             attempts+=1
-    print('just ')
 
     play_again=input('do u want to play again?? (yes/no)')
