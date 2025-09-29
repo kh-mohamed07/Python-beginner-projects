@@ -1,4 +1,4 @@
-# 🎲 Guess the Number Game
+#  Guess the Number Game
 This is **my first coding project** built with Python!
 A fun beginner-friendly Python project where you can play a **number guessing game** in two different modes:
 1. **Computer Version** – You guess the number chosen by the computer.
@@ -6,9 +6,9 @@ A fun beginner-friendly Python project where you can play a **number guessing ga
 
 ---
 
-## 🚀 How to Play
+##  How to Play
 
-### ▶️ Computer Version
+###  Computer Version
 - The computer picks a random number between **0 and 100**.
 - You try to guess the number.
 - After each guess, the computer will give you hints:
@@ -16,11 +16,11 @@ A fun beginner-friendly Python project where you can play a **number guessing ga
   - **"too high"** if your guess is much bigger than the number.  
   - A softer hint if you’re close.
 - You have **10 attempts** to guess correctly.
-- If you guess right, you win! 🎉
+- If you guess right, you win! 
 
 ---
 
-### ▶️ User Version
+###  User Version
 - You think of a number between **0 and 100**, and the **computer will try to guess it**.
 - After each guess, you give feedback:
   - **C** → Correct  
