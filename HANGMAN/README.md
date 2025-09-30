@@ -1,10 +1,15 @@
-# hangman
-A simple Python game where you play hangman against the computer. 
+# Hangman Game (Python)
 
-## Features
-- Random word selection from a word list
-- Input validation (no duplicates, no symbols)
-- Visual display of current word progress
-- Replay option after each game
+A simple **Hangman** game built in Python.  
+The player has 6 lives to guess a random word (from a provided word list).  
+
+---
+
+##  Features
+- Randomly selects a word from a word list
+- Tracks guessed letters and remaining lives
+- Prevents invalid inputs and repeated guesses
+- Win/lose messages
+- Replay option
 
 ## Made by [kh-mohamed07]
