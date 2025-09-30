@@ -46,7 +46,3 @@ while repeat=='yes':
         computer_rounds+=1
     print(f'Wins: You: {user_rounds}   ---  Computer: {computer_rounds} ')
     repeat=input('do u want to play another round?? (Yes or No) : ').lower()
-
-
-      
-
