@@ -5,5 +5,6 @@ This repository contains beginner-level Python projects I built while learning p
 - **Guess_the_number** – A simple number guessing game.
 - **HANGMAN** – Classic Hangman game in Python.
 - **rps** – Rock, Paper, Scissors game.
+- **Tic-Tac-Toe (simple version)** 
 
 Each project is in its own folder and can be run independently.
