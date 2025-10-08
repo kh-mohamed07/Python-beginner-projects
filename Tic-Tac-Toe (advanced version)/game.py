@@ -132,10 +132,22 @@ while play_again=='yes':
 
 
     elif mode=='4':
-        x_player=SmartComputerPlayer('X')
-        o_player=SmartComputerPlayer('O')
-        game=TicTacToe()
-        play(game,x_player,o_player,print_game=False)
+        x_wins=0
+        o_wins=0
+        ties=0
+        for _ in range(100):
+            x_player=SmartComputerPlayer('X')
+            o_player=SmartComputerPlayer('O')
+            game=TicTacToe()
+            result=play(game,x_player,o_player,print_game=False)
+            if result=='X':
+                x_wins+=1
+            elif result=='O':
+                o_wins+=1
+            else:
+                ties+=1
+
+        print(f'X wins = {x_wins}, O wins = {o_wins} , and ties={ties} ')
     
     else: 
         print('invalid input , choose from the available modes, Try again!!')
