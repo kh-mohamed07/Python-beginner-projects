@@ -55,7 +55,25 @@ class Board :
                 self.dig(r,c)
         return True
 
+    def __str__(self):
+        visible_board=[]
+        for r in range(self.dim_size):
+            visible_row=[]
+            for c in range(self.dim_size):
+                if (r,c) in self.dug : 
+                    visible_row.append(self.board[r][c])
+                else:
+                    visible_row.append('_')
+                    
+            visible_board.append(visible_row)
         
+        str_rep = ' ' + ' | '.join([str(c) for c in range(self.dim_size)]) + '\n'
+        str_rep+='-'*self.dim_size*4 + '\n'
+
+        for i,row in enumerate(visible_board):
+            str_rep += str(i) + ' | ' + ' | '.join(row) + '\n'
+
+        return str_rep
 
 
 def play(dim_size=10 , num_bombs=10):
