@@ -1,4 +1,5 @@
 import random
+import re 
 
 class Board :
     def __init__(self,dim_size,num_bombs):
@@ -64,7 +65,7 @@ class Board :
                     visible_row.append(self.board[r][c])
                 else:
                     visible_row.append('_')
-                    
+
             visible_board.append(visible_row)
         
         str_rep = ' ' + ' | '.join([str(c) for c in range(self.dim_size)]) + '\n'
@@ -78,6 +79,19 @@ class Board :
 
 def play(dim_size=10 , num_bombs=10):
     board = Board(dim_size , num_bombs)
+    while len(board.dug) < dim_size**2 - num_bombs :
+        print(board)
+        user_input=re.split(r'[,\s]+',input('where would u like to dig? (row,col): '))
+        try:
+            if len(user_input) != 2 :
+                raise ValueError
+            row,col=map(int , user_input)
+            if row >= dim_size or row<0 or  col>=dim_size or col<0 :
+                raise ValueError
+        except ValueError:
+            print('please enter valid numbers')
+
+
 
     
     
