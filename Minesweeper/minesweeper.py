@@ -62,13 +62,13 @@ class Board :
             visible_row=[]
             for c in range(self.dim_size):
                 if (r,c) in self.dug : 
-                    visible_row.append(self.board[r][c])
+                    visible_row.append(str(self.board[r][c]))
                 else:
                     visible_row.append('_')
 
             visible_board.append(visible_row)
         
-        str_rep = ' ' + ' | '.join([str(c) for c in range(self.dim_size)]) + '\n'
+        str_rep = '    ' + ' | '.join([str(c) for c in range(self.dim_size)]) + '\n'
         str_rep+='-'*self.dim_size*4 + '\n'
 
         for i,row in enumerate(visible_board):
@@ -85,11 +85,40 @@ def play(dim_size=10 , num_bombs=10):
         try:
             if len(user_input) != 2 :
                 raise ValueError
-            row,col=map(int , user_input)
+            row,col=int(user_input[0]),int(user_input[-1])
             if row >= dim_size or row<0 or  col>=dim_size or col<0 :
                 raise ValueError
         except ValueError:
             print('please enter valid numbers')
+            continue
+        
+        safe=board.dig(row,col)
+        if not safe: 
+            break 
+
+    if safe:
+        print('CONGRATULATIONS!! YOU WON ')
+    else:
+        print('GAME OVER !! you lost :( ')
+        board.dug={(r,c) for r in range(dim_size) for c in range(dim_size)}
+        print(board)
+
+if __name__=='__main__':
+    print('there are 10 bombs , be careful :) ')
+    play_again='yes'
+    while play_again=='yes':
+        play()
+        while True:
+            play_again=input('do u want to play again?? (yes or no)').strip().lower()
+            if play_again in ['yes','no']:
+                break
+            else:
+                print('please enter yes or no ')
+
+
+
+
+
 
 
 
